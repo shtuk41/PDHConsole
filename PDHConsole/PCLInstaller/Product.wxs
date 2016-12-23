@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="PCLInstaller" Language="1033" Version="0.1.0.0" Manufacturer="Aleksander Shtuk" UpgradeCode="6b844ee1-8353-48ef-b733-3d79b1afbccd">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <Media Id="1" Cabinet="PCLInstaller.cab" EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="PCLInstaller" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+    <UIRef Id="WixUI_Minimal"/>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="DesktopFolder" Name="Desktop"/>
+      <Directory Id="ProgramMenuFolder" Name="Programs">
+        <Directory Id="ProgramMenuDir" Name="PerformanceCounterLogger"/>
+      </Directory>
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="PCLInstaller" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+    <Icon Id="PCL.ico" SourceFile="..\PerformanceCounterLogger\PCL.ico"/>
+		<ComponentGroup Id="ProductComponents">
+      <Component Id="PCLExecutable" Guid="2AE94A47-78C4-4A68-9348-57F73C04E21A"  Directory="INSTALLFOLDER">
+        <File Id="PCLExe" Name="PerformanceCounterLogger.exe" DiskId="1" Source="..\Release\PerformanceCounterLogger.exe" KeyPath="yes">
+          <Shortcut Id="startmenuPCL" Directory="ProgramMenuDir" Name="Performance Counter Logger"
+           WorkingDirectory="INSTALLFOLDER" IconIndex="0" Advertise="yes" Icon="PCL.ico"/>
+          <Shortcut Id="desktopPCL" Directory="DesktopFolder" Name="PCL"
+                    WorkingDirectory="INSTALLFOLDER" IconIndex="0" Advertise="yes"  Icon="PCL.ico"/>
+        </File>
+      </Component>
+      <Component Id="ProgramMenuDir" Guid="66582020-D8FB-4D2F-B87D-1F782C3B13FF" Directory="INSTALLFOLDER">
+        <RemoveFolder Id='ProgramMenuDir' On='uninstall'/>
+        <RegistryValue Root='HKCU' Key='Software\[Manufacturer]\[ProductName]' Name='installed' Type='integer' Value='1' KeyPath='yes' />
+        <RemoveFolder Id='RemoveProgramMenuDir' Directory='ProgramMenuDir' On='uninstall'/>
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

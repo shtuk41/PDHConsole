@@ -456,8 +456,11 @@ private:	int PopulateProcessorCounter()
 			}
 private: System::Void buttonClearAddedPerformanceCounters_Click(System::Object^  sender, System::EventArgs^  e) 
 		 {
-			 listBoxAddedPerformanceCounters->Items->RemoveAt(listBoxAddedPerformanceCounters->SelectedIndex);
-			 listBoxAddedPerformanceCounters->ClearSelected();
+			 if (listBoxAddedPerformanceCounters->SelectedIndex >= 0)
+			 {
+				 listBoxAddedPerformanceCounters->Items->RemoveAt(listBoxAddedPerformanceCounters->SelectedIndex);
+				 listBoxAddedPerformanceCounters->ClearSelected();
+			 }
 		 }
 };
 }

@@ -45,3 +45,27 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.tlog
+*.suo
+PDHConsole/Debug/PerformanceCounterLogger.exe
+*.metagen
+*.ilk
+*.pdb
+*.wixpdb
+*.txt
+*.opensdf
+PDHConsole/PDHConsole.sdf
+*.sdf
+*.res
+*.obj
+*.manifest
+*.resources
+*.lastbuildstate
+*.log
+*.pch
+PDHConsole/PerformanceCounterLogger/Debug/PerformanceCounterLogger.vcxproj.GenerateResource.Cache
+*.cache
+*.sdf
+*.bi
+*.exe
+PDHConsole/PerformanceCounterLogger/mymobilpc.csv
