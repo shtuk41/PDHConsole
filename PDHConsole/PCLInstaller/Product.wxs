@@ -28,7 +28,7 @@
     <Icon Id="PCL.ico" SourceFile="..\PerformanceCounterLogger\PCL.ico"/>
 		<ComponentGroup Id="ProductComponents">
       <Component Id="PCLExecutable" Guid="2AE94A47-78C4-4A68-9348-57F73C04E21A"  Directory="INSTALLFOLDER">
-        <File Id="PCLExe" Name="PerformanceCounterLogger.exe" DiskId="1" Source="..\Release\PerformanceCounterLogger.exe" KeyPath="yes">
+        <File Id="PCLExe" Name="PerformanceCounterLogger.exe" DiskId="1" Source="..\x64\Release\PerformanceCounterLogger.exe" KeyPath="yes">
           <Shortcut Id="startmenuPCL" Directory="ProgramMenuDir" Name="Performance Counter Logger"
            WorkingDirectory="INSTALLFOLDER" IconIndex="0" Advertise="yes" Icon="PCL.ico"/>
           <Shortcut Id="desktopPCL" Directory="DesktopFolder" Name="PCL"
