@@ -1,6 +1,6 @@
 # PDHConsole
 
-Software for logging hardware performenace counters from multiple nodes in a cluster.  It is based on PDH library.
+Software for logging hardware performance counters from multiple nodes in a cluster.  It is based on PDH library.
 
 1.  Add counters.  
 <img src="README/configuration.png" alt="Screenshot">  
