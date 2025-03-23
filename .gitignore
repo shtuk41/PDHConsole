@@ -69,3 +69,26 @@ PDHConsole/PerformanceCounterLogger/Debug/PerformanceCounterLogger.vcxproj.Gener
 *.bi
 *.exe
 PDHConsole/PerformanceCounterLogger/mymobilpc.csv
+
+#Ignore thumbnails created by Windows
+#Ignore files built by Visual Studio
+*.user
+*.aps
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.tlb
+*.tlh
+*.bak
+[Bb]in
+[Dd]ebug*/
+*.lib
+*.sbr
+obj/
+[Rr]elease*/
+_ReSharper*/
+[Tt]est[Rr]esult*
+.vs/
+#Nuget packages folder
+packages/
